@@ -1,5 +1,6 @@
 package com.discovery.java.tekdroid;
 
+import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -12,8 +13,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -29,9 +33,21 @@ import cz.msebera.android.httpclient.Header;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    public API                      _api = new API(this);
-    public Profile                  _userProfile;
-    private ArrayList<MarkListItem> _markList = new ArrayList<>();
+    public API                          _api = new API(this);
+    public Profile                      _userProfile;
+    private ArrayList<MarkListItem>     _markList = new ArrayList<>();
+    private ArrayList<GradeListItem>    _gradeList = new ArrayList<>();
+
+    private AutoCompleteTextView  DropDown(String text) {
+        final ActionBar.LayoutParams lparams = new ActionBar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        final AutoCompleteTextView   textView = new AutoCompleteTextView(this);
+        textView.setLayoutParams(lparams);
+        textView.setText(text);
+        textView.setBackgroundColor(0xffff00);
+        textView.setTextColor(0x000000);
+        textView.showDropDown();
+        return textView;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +60,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+                AutoCompleteTextView loginSearch = (AutoCompleteTextView) findViewById(R.id.home_search_by_login_field);
+                ((RelativeLayout) findViewById(R.id.home_content_layout)).addView(DropDown(loginSearch.getText().toString()));
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
             }
         });
 
@@ -53,9 +72,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         _api.relayReceiver(getIntent());
         _api.retrieveProfileInformation(_api._userLogin, userProfileRequest());
         _api.retrieveUserMark(userMarkRequest());
+        _api.retrieveUserModules(userGradeRequest());
 
-        System.out.println("token = " + _api._session_token);
-        System.out.println("user = " + _api._userLogin);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -152,34 +170,29 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     /* This request will fill HomeActivity::_markList with the 5 last marks obtained by the student */
     public JsonHttpResponseHandler  userMarkRequest()   {
         JsonHttpResponseHandler     callBack = new JsonHttpResponseHandler() {
-
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 super.onSuccess(statusCode, headers, response);
-
                 try
                 {
                     JSONArray   marks = response.getJSONArray(API.getString(R.string.marks));
-
-                    int         start = marks.length() <= 5 ? 0 : marks.length() - 5;
-
-                    for (int i = start; i < marks.length(); i++)
+                    int         position = 0;
+                    for (int i = marks.length() - 1; i >= 0 && position < 5; i--)
                     {
                         try
                         {
                             JSONObject  m = marks.getJSONObject(i);
-                            _markList.add(i - start, new MarkListItem(m.getString(API.getString(R.string.mark_project_name)),
-                                                                     m.getString(API.getString(R.string.mark_final_mark)),
-                                                                     m.getString(API.getString(R.string.mark_project_rater))));
+                            _markList.add(position, new MarkListItem(m.getString(API.getString(R.string.mark_project_name)),
+                                    m.getString(API.getString(R.string.mark_final_mark)),
+                                    m.getString(API.getString(R.string.mark_project_rater))));
+                            ++position;
                         } catch (JSONException e) { e.printStackTrace(); }
                     }
                 } catch (JSONException e) {e.printStackTrace(); }
-
                 MarkListAdapter mMarkAdpater = new MarkListAdapter(HomeActivity.this, R.layout.mark_list_item, _markList);
                 ((ListView) findViewById(R.id.home_last_marks_list)).setAdapter(mMarkAdpater);
                 System.out.println("Leaving Mark request on success");
             }
-
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                 super.onFailure(statusCode, headers, throwable, errorResponse);
@@ -189,5 +202,41 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         return callBack;
     } /* ____!userMarkRequest() */
+
+
+    /* This request will fill HomeActivity::_markList with the 5 last marks obtained by the student */
+    public JsonHttpResponseHandler  userGradeRequest()   {
+        JsonHttpResponseHandler     callBack = new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+                try
+                {
+                    JSONArray   modules = response.getJSONArray(API.getString(R.string.modules));
+                    int         position = 0;
+                    for (int i = modules.length() - 1; i >= 0 && position < 3; i--)
+                    {
+                        try
+                        {
+                            JSONObject  m = modules.getJSONObject(i);
+                            String      g = m.getString(API.getString(R.string.grade_module_grade));
+                            if (!g.equals("-")) {
+                                _gradeList.add(position, new GradeListItem(m.getString(API.getString(R.string.grade_module_name)), g));
+                                ++position;
+                            }
+                        } catch (JSONException e) { e.printStackTrace(); }
+                    }
+                } catch (JSONException e) {e.printStackTrace(); }
+                GradeListAdapter mGradeAdapter = new GradeListAdapter(HomeActivity.this, R.layout.grade_list_item, _gradeList);
+                ((ListView) findViewById(R.id.home_last_grade_list)).setAdapter(mGradeAdapter);
+            }
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+            }
+        };
+
+        return callBack;
+    } /* ____!userGradeRequest() */
 
 }

@@ -58,4 +58,11 @@ public class API {
         _client.get(getString(R.string.marksAPI), p, callBack);
     }
 
+    public void         retrieveUserModules(JsonHttpResponseHandler callBack) {
+        RequestParams   p = new RequestParams();
+
+        p.put(getString(R.string.token), _session_token);
+        _client.get(getString(R.string.moduleAPI), p, callBack);
+    }
+
 }
