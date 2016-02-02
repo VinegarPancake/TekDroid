@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,6 +46,7 @@ public class                TrombiFragment extends Fragment {
     Button                  mSearchButton;
     EditText                mYearSelecter;
     ArrayList<TrombiItem>   mTrombiList = new ArrayList<>();
+    ListView                mList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -68,6 +70,23 @@ public class                TrombiFragment extends Fragment {
         try
         {
             mYearSelecter = (EditText)mFragmentView.findViewById(R.id.fragment_trombi_year_selecter);
+        } catch (NullPointerException e ) {e.printStackTrace();}
+        try
+        {
+            mList = (ListView)mFragmentView.findViewById(R.id.fragment_trombi_result_list);
+            mList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    TrombiItem  selected = (TrombiItem)parent.getItemAtPosition(position);
+                    Bundle      params = new Bundle();
+
+                    LoginResearchFragment details = new LoginResearchFragment();
+                    params.putString("userLogin", selected.mLogin);
+                    params.putString("sessionToken", mApi._session_token);
+                    details.setArguments(params);
+                    getFragmentManager().beginTransaction().replace(R.id.home_content_layout, details).addToBackStack(null).commit();
+                }
+            });
         } catch (NullPointerException e ) {e.printStackTrace();}
         try
         {

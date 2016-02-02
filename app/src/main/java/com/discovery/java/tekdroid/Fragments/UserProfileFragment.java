@@ -39,6 +39,7 @@ public class                    UserProfileFragment extends Fragment {
     ArrayList<MarkListItem>     _markList = new ArrayList<>();
     ArrayList<GradeListItem>    _gradeList = new ArrayList<>();
     View                        _fragmentView;
+    String                      _intented;
 
 
     public void onCreate(Bundle savedInstanceState) {

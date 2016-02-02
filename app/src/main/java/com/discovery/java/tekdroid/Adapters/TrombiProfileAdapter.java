@@ -54,9 +54,6 @@ public class                    TrombiProfileAdapter extends ArrayAdapter<Trombi
         }
         item = mContent.get(position);
         if (item != null) {
-            System.out.println("ITEM CONTAINS LOGIN +++> " + item.mLogin);
-            if (holder.mLogin == null)
-                System.out.println("holder.mLogin IS NULL");
 
             holder.mLogin.setText(item.mLogin);
             Picasso.with(mContext).load(item.mPicture).into(holder.mPicture);
@@ -64,6 +61,10 @@ public class                    TrombiProfileAdapter extends ArrayAdapter<Trombi
         return view;
     }
 
+    public TrombiItem   getItem(int position)
+    {
+        return mContent.get(position);
+    }
 
     private class   TrombiItemHolder
     {

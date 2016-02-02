@@ -27,6 +27,7 @@ public class                        LoginResearchFragment extends Fragment {
     View                            mView;
     searchResultProfileHolder       mProfileHolder = new searchResultProfileHolder();
     SearchView                      mSearchButton;
+    String                          mLogin;
 
     public LoginResearchFragment() {
     }
@@ -55,6 +56,7 @@ public class                        LoginResearchFragment extends Fragment {
                              Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.fragment_login_research, container, false);
         mProfileHolder.set(mView);
+        mLogin = getArguments().getString("userLogin");
         mSearchButton = (SearchView)mView.findViewById(R.id.login_research_search_button);
 
         mSearchButton.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -69,6 +71,12 @@ public class                        LoginResearchFragment extends Fragment {
                 return false;
             }
         });
+
+        if (mLogin != null) {
+            mSearchButton.setQuery(mLogin, true);
+            _api.retrieveProfileInformation(mLogin, fillProfile());
+        }
+
         return mView;
     }
 
