@@ -40,9 +40,9 @@ public class EventAdapter extends ArrayAdapter<EventListItem> {
             LayoutInflater  inflater = ((Activity)_context).getLayoutInflater();
             view = inflater.inflate(_layout_ressource_id, parent, false);
             holder = new EventItemHolder();
-            holder.name = (TextView)view.findViewById(R.id.list_mark_item_project_name);
-            holder.mark = (TextView)view.findViewById(R.id.list_mark_item_mark);
-            holder.rater = (TextView)view.findViewById(R.id.list_mark_item_rater);
+            holder.title = (TextView)view.findViewById(R.id.event_name);
+            holder.start = (TextView)view.findViewById(R.id.event_time_start);
+            holder.end = (TextView)view.findViewById(R.id.event_time_end);
             view.setTag(holder);
         }
         else
@@ -50,16 +50,16 @@ public class EventAdapter extends ArrayAdapter<EventListItem> {
             holder = (EventItemHolder)view.getTag();
         }
         item = _content.get(position);
-        holder.name.setText(item.mProjectName);
-        holder.mark.setText(item.mProjectMark);
-        holder.rater.setText(item.mProjectRater);
+        holder.title.setText(item.mEventTitle);
+        holder.start.setText(item.mEventStart);
+        holder.end.setText(item.mEventEnd);
 
         return view;
     }
 
     private class   EventItemHolder {
-        TextView    name;
-        TextView    mark;
-        TextView    rater;
+        TextView    title;
+        TextView    start;
+        TextView    end;
     }
 }
