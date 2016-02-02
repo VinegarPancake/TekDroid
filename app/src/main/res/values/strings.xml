@@ -74,4 +74,27 @@
 
     <string name="prompt_search_by_login">Search by login</string>
     <string name="title_activity_planning">PlanningActivity</string>
+    
+    <string-array name="trombi_locations">
+        <item>FR/BDX</item>
+        <item>FR/LIL</item>
+        <item>FR/LYN</item>
+        <item>FR/MAR</item>
+        <item>FR/MPL</item>
+        <item>FR/NCY</item>
+        <item>FR/NAN</item>
+        <item>FR/NCE</item>
+        <item>FR/PAR</item>
+        <item>FR/REN</item>
+        <item>FR/STG</item>
+        <item>FR/TLS</item>
+    </string-array>
+
+    <string-array name="trombi_promos">
+        <item>tek1</item>
+        <item>tek2</item>
+        <item>tek3</item>
+        <item>tek4</item>
+        <item>tek5</item>
+    </string-array>
 </resources>
