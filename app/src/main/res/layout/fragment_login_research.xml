@@ -18,7 +18,8 @@
         android:layout_marginTop="15dp"
         android:layout_marginRight="15dp"
         android:id="@+id/login_research_result_layout"
-        android:background="#fbe2ff">
+        android:background="#ffffff"
+        android:visibility="invisible">
 
         <TextView
             android:layout_width="match_parent"
@@ -104,7 +105,8 @@
                 android:id="@+id/login_research_result_login"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:layout_margin="2dp" />
+                android:layout_margin="2dp"
+                android:singleLine="true" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -115,7 +117,8 @@
                 android:layout_below="@+id/login_research_result_login"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_margin="2dp" />
+                android:layout_margin="2dp"
+                android:singleLine="true" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -126,7 +129,8 @@
                 android:layout_below="@+id/login_research_result_fullName"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_margin="2dp" />
+                android:layout_margin="2dp"
+                android:singleLine="true" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -137,7 +141,8 @@
                 android:layout_below="@+id/login_research_result_city"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_margin="2dp" />
+                android:layout_margin="2dp"
+                android:singleLine="true" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -148,7 +153,8 @@
                 android:layout_below="@+id/login_research_result_promo"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_margin="2dp" />
+                android:layout_margin="2dp"
+                android:singleLine="true" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -168,7 +174,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginRight="207dp"
                 android:layout_marginEnd="207dp"
-                android:background="#d57272"
+                android:background="#ffffff"
                 android:id="@+id/login_research_result_titles">
 
                 <TextView
@@ -180,7 +186,8 @@
                     android:layout_alignParentTop="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
-                    android:layout_margin="3dp" />
+                    android:layout_margin="3dp"
+                    android:singleLine="true" />
 
                 <CheckBox
                     android:layout_width="match_parent"
@@ -190,7 +197,8 @@
                     android:layout_alignParentBottom="true"
                     android:layout_alignRight="@+id/textView6"
                     android:layout_alignEnd="@+id/textView6"
-                    android:checked="false" />
+                    android:checked="false"
+                    android:singleLine="true" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -200,7 +208,8 @@
                     android:id="@+id/textView7"
                     android:layout_below="@+id/textView6"
                     android:layout_alignRight="@+id/login_research_info_value_connected"
-                    android:layout_alignEnd="@+id/login_research_info_value_connected" />
+                    android:layout_alignEnd="@+id/login_research_info_value_connected"
+                    android:singleLine="true" />
 
             </RelativeLayout>
 
@@ -223,7 +232,8 @@
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
-                    android:layout_margin="3dp" />
+                    android:layout_margin="3dp"
+                    android:singleLine="true" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -234,7 +244,8 @@
                     android:layout_below="@+id/login_research_info_value_membership"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
-                    android:layout_margin="3dp" />
+                    android:layout_margin="3dp"
+                    android:singleLine="true" />
 
             </RelativeLayout>
         </RelativeLayout>
@@ -244,35 +255,18 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:id="@+id/login_research_prompt_layout"
+        android:gravity="center_vertical"
         android:layout_alignTop="@+id/login_research_result_layout"
-        android:layout_alignLeft="@+id/login_research_result_layout"
-        android:layout_alignStart="@+id/login_research_result_layout"
-        android:layout_marginTop="319dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginLeft="15dp"
-        android:background="#ebc9c9"
-        android:id="@+id/login_research_prompt_layout">
-
-        <AutoCompleteTextView
-            android:id="@+id/autoCompleteTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/prompt_search_by_login"
-            android:inputType="textEmailAddress"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="26dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="384dp">
 
         <SearchView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/searchView"
-            android:layout_alignBottom="@+id/autoCompleteTextView"
+            android:id="@+id/login_research_search_button"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:clickable="true" />

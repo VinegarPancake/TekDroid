@@ -45,18 +45,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     public Profile _userProfile;
     private ArrayList<MarkListItem>     _markList = new ArrayList<>();
     private ArrayList<GradeListItem>    _gradeList = new ArrayList<>();
-    private Fragment                    _test;
+    Fragment                            _userProfileFragment = null;
 
-    private AutoCompleteTextView  DropDown(String text) {
-        final ActionBar.LayoutParams lparams = new ActionBar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        final AutoCompleteTextView   textView = new AutoCompleteTextView(this);
-        textView.setLayoutParams(lparams);
-        textView.setText(text);
-        textView.setBackgroundColor(0xffff00);
-        textView.setTextColor(0x000000);
-        textView.showDropDown();
-        return textView;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,24 +55,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                AutoCompleteTextView loginSearch = (AutoCompleteTextView) findViewById(R.id.home_search_by_login_field);
-//                ((RelativeLayout) findViewById(R.id.home_content_layout)).addView(DropDown(loginSearch.getText().toString()));
-////                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-////                        .setAction("Action", null).show();
-//            }
-//        });
 
 
         _api.relayReceiver(getIntent());
-//        _api.retrieveProfileInformation(_api._userLogin, userProfileRequest());
-//        _api.retrieveUserMark(userMarkRequest());
-//        _api.retrieveUserModules(userGradeRequest());
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -92,6 +67,17 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.drawer_nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        _userProfileFragment = new UserProfileFragment();
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        Bundle bun = new Bundle();
+
+        bun.putString("userLogin", _api._userLogin);
+        bun.putString("sessionToken", _api._session_token);
+        try { _userProfileFragment.setArguments(bun); } catch (IllegalStateException e) { e.printStackTrace(); }
+        ft.replace(R.id.home_content_layout, _userProfileFragment);
+        ft.commit();
+
     }
 
     @Override
@@ -166,7 +152,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         switch (viewId) {
             case R.id.nav_camera:
-                fragment = new UserProfileFragment();
+                if (_userProfileFragment == null)
+                    fragment = new UserProfileFragment();
+                else fragment = _userProfileFragment;
                 title = "My Profile";
                 break;
 //                fragment = new LoginResearchFragment();
@@ -183,7 +171,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
             bun.putString("userLogin", _api._userLogin);
             bun.putString("sessionToken", _api._session_token);
-            fragment.setArguments(bun);
+            try { fragment.setArguments(bun); } catch (IllegalStateException e) { e.printStackTrace(); }
             ft.replace(R.id.home_content_layout, fragment);
             ft.commit();
         }

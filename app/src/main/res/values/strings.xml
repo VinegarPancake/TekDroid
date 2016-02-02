@@ -38,6 +38,8 @@
     <string name="active_time">active</string>
     <string name="credits">credits</string>
     <string name="title_activity_login">Sign in</string>
+    <string name="user_groups">groups</string>
+    <string name="group_name">name</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Login</string>
