@@ -153,14 +153,14 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         String   title = getString(R.string.app_name);
 
         switch (viewId) {
-            case R.id.nav_camera:
+            case R.id.nav_profile:
                 if (_userProfileFragment == null)
                     fragment = new UserProfileFragment();
                 else fragment = _userProfileFragment;
                 title = "My Profile";
                 break;
 //                fragment = new LoginResearchFragment();
-            case R.id.nav_gallery:
+            case R.id.nav_research:
                 fragment = new LoginResearchFragment();
                 title = "Search by Login";
                 break;
@@ -169,7 +169,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 title = "Planning";
                 break;
 
-            case R.id.nav_manage:
+            case R.id.nav_trombi:
                 fragment = new TrombiFragment();
                 title = "Trombinoscope";
                 break;

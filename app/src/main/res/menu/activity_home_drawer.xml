@@ -4,11 +4,11 @@
     <group android:checkableBehavior="single">
         <!--android:icon="@drawable/ic_menu_camera"-->
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_profile"
             android:icon="@drawable/ic_action_name"
             android:title="@string/My_Profile" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_research"
             android:icon="@drawable/ic_research"
             android:title="@string/Search_by_Login" />
         <item
@@ -16,11 +16,11 @@
             android:icon="@drawable/ic_messages"
             android:title="@string/planning" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_trombi"
             android:icon="@drawable/ic_trombinoscope"
             android:title="@string/Trombi" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_messages"
             android:icon="@drawable/ic_messages"
             android:title="@string/Last_Messages" />
     </group>

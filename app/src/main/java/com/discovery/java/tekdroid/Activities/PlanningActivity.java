@@ -166,18 +166,22 @@ public class PlanningActivity extends AppCompatActivity implements NavigationVie
         String   title = getString(R.string.app_name);
 
         switch (viewId) {
-            case R.id.nav_camera:
+            case R.id.nav_profile:
                 fragment = new UserProfileFragment();
                 title = "My Profile";
                 break;
 //                fragment = new LoginResearchFragment();
-            case R.id.nav_gallery:
+            case R.id.nav_research:
                 fragment = new LoginResearchFragment();
                 title = "Search by Login";
                 break;
             case R.id.nav_planning:
                 fragment = new PlanningFragment();
                 title = "Planning";
+                break;
+            case R.id.nav_trombi:
+                fragment = new PlanningFragment();
+                title = "Trombi";
                 break;
             default: break;
         }
