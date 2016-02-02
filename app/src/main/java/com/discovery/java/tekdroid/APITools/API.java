@@ -66,4 +66,13 @@ public class API {
         _client.get(getString(R.string.moduleAPI), p, callBack);
     }
 
+    public void         retrieveDay(JsonHttpResponseHandler callBack, String day) {
+        RequestParams   p = new RequestParams();
+
+        p.put(getString(R.string.token), _session_token);
+        p.put(getString(R.string.start), day);
+        p.put(getString(R.string.end), day);
+        _client.get(getString(R.string.planningAPI), p, callBack);
+    }
+
 }
