@@ -7,7 +7,39 @@
     android:id="@+id/calendar"
     android:layout_margin="10dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+    android:layout_height="300dp"
+        android:layout_marginBottom="20dp"/>
 
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Modules du semestre courant       "
+        android:id="@+id/switch1"
+        android:layout_gravity="right"
+        android:layout_marginBottom="15dp"/>
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Modules où je suis inscrit seulement       "
+        android:id="@+id/switch2"
+        android:layout_gravity="right"
+        android:layout_marginBottom="15dp"/>
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sessions où je suis inscrit seulement       "
+        android:id="@+id/switch3"
+        android:layout_gravity="right"/>
+
+    <Button
+        android:id="@+id/button_view"
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VOIR"
+        android:background="@color/plancton"
+        android:layout_gravity="center"/>
 
 </LinearLayout>

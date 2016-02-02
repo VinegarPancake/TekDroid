@@ -7,6 +7,18 @@ import org.json.JSONObject;
 
 
 public class Day {
+
+    public class EpiEvent {
+        public String titleModule; // titlemodule
+        public String actiTitle; // acti_title
+        public String room; // more complex object
+        public String codeActi; // codeacti
+        public String codeInstance; // codeinstance
+        public String registerStudent; // register_student
+        public String moduleRegistered; // module_registered
+
+    }
+
     public String   fullName;
     public String   login;
     public String   email;
