@@ -12,6 +12,10 @@
             android:icon="@drawable/ic_research"
             android:title="@string/Search_by_Login" />
         <item
+            android:id="@+id/nav_planning"
+            android:icon="@drawable/ic_messages"
+            android:title="@string/planning" />
+        <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_trombinoscope"
             android:title="@string/Trombi" />
