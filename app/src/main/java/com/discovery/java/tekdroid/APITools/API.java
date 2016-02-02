@@ -75,4 +75,15 @@ public class API {
         _client.get(getString(R.string.planningAPI), p, callBack);
     }
 
+    public void         retrieveStudentList(String year, String location, String promo, JsonHttpResponseHandler callBack)
+    {
+        RequestParams   p = new RequestParams();
+
+        p.put(getString(R.string.token), _session_token);
+        p.put(getString(R.string.year), year);
+        p.put(getString(R.string.location), location);
+        if (!promo.equals("null"))
+            p.put(getString(R.string.promotion), promo);
+        _client.get(getString(R.string.trombiAPI), p, callBack);
+    }
 }

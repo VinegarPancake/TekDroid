@@ -13,6 +13,8 @@
     <string name="Last_Messages">Messages</string>
 
     <string name="EpitechAPI">https://epitech-api.herokuapp.com/</string>
+    <!-- LOGIN & GENERAL -->
+    <string name="loginAPI">https://epitech-api.herokuapp.com/login</string>
     <string name="password">password</string>
     <string name="user">user</string>
     <string name="token">token</string>
@@ -20,61 +22,17 @@
     <string name="end">end</string>
     <string name="relayUserLogin">userLogin</string>
     <string name="relaySessionToken">sessionToken</string>
-
-    <string name="loginAPI">https://epitech-api.herokuapp.com/login</string>
-
-    <string name="planningAPI">https://epitech-api.herokuapp.com/planning</string>
-
-    <string name="marksAPI">https://epitech-api.herokuapp.com/marks</string>
-    <string name="moduleAPI">https://epitech-api.herokuapp.com/modules</string>
-
-    <string name="messagesAPI">https://epitech-api.herokuapp.com/messages</string>
-
-    <string name="userAPI">https://epitech-api.herokuapp.com/user</string>
-    <string name="login">login</string>
-    <string name="fullName">title</string>
-    <string name="email">internal_email</string>
-    <string name="picture">picture</string>
-    <string name="promo">promo</string>
-    <string name="gpa">gpa</string>
-    <string name="complementary_info">nsstat</string>
-    <string name="active_time">active</string>
-    <string name="credits">credits</string>
-    <string name="title_activity_login">Sign in</string>
-    <string name="user_groups">groups</string>
-    <string name="group_name">name</string>
-
-    <!-- Strings related to login -->
-    <string name="prompt_email">Login</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="error_invalid_email">This login is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
-
-    <string name="last_mark_title">Last Marks :</string>
-    <string name="last_grade_title">Last Grades :</string>
-    <string name="marks">notes</string>
-    <string name="mark_project_name">title</string>
-    <string name="mark_final_mark">final_note</string>
-    <string name="mark_project_rater">correcteur</string>
-
-    <string name="modules">modules</string>
-    <string name="grade_module_name">title</string>
-    <string name="grade_module_grade">grade</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- /LOGIN & GENERAL -->
 
 
-    <string name="prompt_search_by_login">Search by login</string>
-    <string name="title_activity_planning">PlanningActivity</string>
-    
+    <!-- TROMBI-->
+    <string name="trombiAPI">https://epitech-api.herokuapp.com/trombi</string>
+    <string name="studentList">items</string>
+    <string name="year">year</string>
+    <string name="location">location</string>
+    <string name="promotion">promo</string>
+    <string name="yearChoice">Year</string>
+
     <string-array name="trombi_locations">
         <item>FR/BDX</item>
         <item>FR/LIL</item>
@@ -97,4 +55,59 @@
         <item>tek4</item>
         <item>tek5</item>
     </string-array>
+    <!-- /TROMBI-->
+
+    <string name="planningAPI">https://epitech-api.herokuapp.com/planning</string>
+
+    <string name="marksAPI">https://epitech-api.herokuapp.com/marks</string>
+
+    <string name="moduleAPI">https://epitech-api.herokuapp.com/modules</string>
+
+    <string name="messagesAPI">https://epitech-api.herokuapp.com/messages</string>
+
+    <!-- USER -->
+    <string name="userAPI">https://epitech-api.herokuapp.com/user</string>
+    <string name="login">login</string>
+    <string name="fullName">title</string>
+    <string name="email">internal_email</string>
+    <string name="picture">picture</string>
+    <string name="promo">promo</string>
+    <string name="gpa">gpa</string>
+    <string name="complementary_info">nsstat</string>
+    <string name="active_time">active</string>
+    <string name="credits">credits</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="user_groups">groups</string>
+    <string name="group_name">name</string>
+    <!-- /USER -->
+
+    <!-- Strings related to login Activity-->
+    <string name="prompt_email">Login</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This login is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
+    <!-- /Strings related to login Activity-->
+
+    <!-- Marks -->
+    <string name="last_mark_title">Last Marks :</string>
+    <string name="last_grade_title">Last Grades :</string>
+    <string name="marks">notes</string>
+    <string name="mark_project_name">title</string>
+    <string name="mark_final_mark">final_note</string>
+    <string name="mark_project_rater">correcteur</string>
+    <!-- /Marks -->
+
+    <!-- GRADES -->
+    <string name="modules">modules</string>
+    <string name="grade_module_name">title</string>
+    <string name="grade_module_grade">grade</string>
+    <!-- /GRADES -->
+
+    <string name="prompt_search_by_login">Search by login</string>
+    <string name="title_activity_planning">PlanningActivity</string>
 </resources>

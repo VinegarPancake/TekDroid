@@ -49,4 +49,11 @@ public class Profile {
         } catch (JSONException e) { e.printStackTrace(); }
 
     }
+
+    public void fillShortProfile(JSONObject jsonShortenProfile)
+    {
+        try { login = jsonShortenProfile.getString(API.getString(R.string.login)); } catch (JSONException e) {e.printStackTrace(); }
+        try { pictureSrc = jsonShortenProfile.getString(API.getString(R.string.picture)); } catch (JSONException e) {e.printStackTrace(); }
+
+    }
 }
