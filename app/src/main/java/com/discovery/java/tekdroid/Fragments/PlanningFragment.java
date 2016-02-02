@@ -3,6 +3,7 @@ package com.discovery.java.tekdroid.Fragments;
 
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -18,6 +19,7 @@ import com.discovery.java.tekdroid.APITools.API;
 import com.discovery.java.tekdroid.APITools.Day;
 import com.discovery.java.tekdroid.APITools.Profile;
 import com.discovery.java.tekdroid.Activities.HomeActivity;
+import com.discovery.java.tekdroid.Activities.PlanningActivity;
 import com.discovery.java.tekdroid.Adapters.GradeListAdapter;
 import com.discovery.java.tekdroid.Adapters.MarkListAdapter;
 import com.discovery.java.tekdroid.Items.GradeListItem;
@@ -80,8 +82,12 @@ public class                    PlanningFragment extends Fragment {
             //show the selected date as a toast
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int day) {
+                String strDay = "2016-02-04";
                 // TODO : implementing the planning activity, passing it the date selected and the api bundle
-
+                Intent i = new Intent(getActivity(), PlanningActivity.class);
+                _api.relayInciter(i);
+                i.putExtra("day", strDay);
+                startActivity(i);
                 Toast.makeText(getActivity(), day + "/" + month + "/" + year, Toast.LENGTH_LONG).show();
             }
         });

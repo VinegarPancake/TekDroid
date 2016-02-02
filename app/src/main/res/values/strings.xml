@@ -73,4 +73,5 @@
 
 
     <string name="prompt_search_by_login">Search by login</string>
+    <string name="title_activity_planning">PlanningActivity</string>
 </resources>
