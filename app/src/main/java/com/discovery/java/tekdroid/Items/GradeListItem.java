@@ -1,4 +1,4 @@
-package com.discovery.java.tekdroid;
+package com.discovery.java.tekdroid.Items;
 
 /**
  * Created by Jamais on 01/02/2016.

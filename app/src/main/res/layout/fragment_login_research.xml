@@ -1,0 +1,281 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.LoginResearchFragment"
+    android:id="@+id/login_research_layout">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="200dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:id="@+id/login_research_result_layout"
+        android:background="#fbe2ff">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="login :"
+            android:id="@+id/textView"
+            android:layout_alignTop="@+id/login_research_profile_picture"
+            android:layout_toRightOf="@+id/login_research_profile_picture"
+            android:layout_toEndOf="@+id/login_research_profile_picture"
+            android:layout_margin="2dp" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="125dp"
+            android:id="@+id/login_research_profile_picture"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_margin="5dp"
+            android:background="#a6c5f0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="name :"
+            android:id="@+id/textView2"
+            android:layout_below="@+id/textView"
+            android:layout_toRightOf="@+id/login_research_profile_picture"
+            android:layout_toEndOf="@+id/login_research_profile_picture"
+            android:layout_margin="2dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="city :"
+            android:id="@+id/textView3"
+            android:layout_below="@+id/textView2"
+            android:layout_toRightOf="@+id/login_research_profile_picture"
+            android:layout_toEndOf="@+id/login_research_profile_picture"
+            android:layout_margin="2dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="year :"
+            android:id="@+id/textView4"
+            android:layout_below="@+id/textView3"
+            android:layout_toRightOf="@+id/login_research_profile_picture"
+            android:layout_toEndOf="@+id/login_research_profile_picture"
+            android:layout_margin="2dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="gpa :"
+            android:id="@+id/textView5"
+            android:layout_below="@+id/textView4"
+            android:layout_toRightOf="@+id/login_research_profile_picture"
+            android:layout_toEndOf="@+id/login_research_profile_picture"
+            android:layout_margin="2dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@+id/textView"
+            android:layout_toRightOf="@+id/textView2"
+            android:layout_toEndOf="@+id/textView2"
+            android:layout_marginLeft="26dp"
+            android:layout_marginStart="26dp"
+            android:layout_alignBottom="@+id/textView5"
+            android:id="@+id/login_research_result">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/login_research_result_login"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="2dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/login_research_result_fullName"
+                android:layout_below="@+id/login_research_result_login"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_margin="2dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/login_research_result_city"
+                android:layout_below="@+id/login_research_result_fullName"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_margin="2dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/login_research_result_promo"
+                android:layout_below="@+id/login_research_result_city"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_margin="2dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/login_research_result_gpa"
+                android:layout_below="@+id/login_research_result_promo"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_margin="2dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/login_research_profile_picture"
+            android:layout_alignLeft="@+id/login_research_profile_picture"
+            android:layout_alignStart="@+id/login_research_profile_picture"
+            android:layout_marginTop="32dp"
+            android:layout_margin="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="207dp"
+                android:layout_marginEnd="207dp"
+                android:background="#d57272"
+                android:id="@+id/login_research_result_titles">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Member of :"
+                    android:id="@+id/textView6"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="3dp" />
+
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Connected"
+                    android:id="@+id/login_research_info_value_connected"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignRight="@+id/textView6"
+                    android:layout_alignEnd="@+id/textView6"
+                    android:checked="false" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Phone :"
+                    android:id="@+id/textView7"
+                    android:layout_below="@+id/textView6"
+                    android:layout_alignRight="@+id/login_research_info_value_connected"
+                    android:layout_alignEnd="@+id/login_research_info_value_connected" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="126dp"
+                android:layout_marginStart="126dp"
+                android:id="@+id/login_reasearch_result_values">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Medium Text"
+                    android:id="@+id/login_research_info_value_membership"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="3dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Medium Text"
+                    android:id="@+id/login_research_info_value_phone"
+                    android:layout_below="@+id/login_research_info_value_membership"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="3dp" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@+id/login_research_result_layout"
+        android:layout_alignLeft="@+id/login_research_result_layout"
+        android:layout_alignStart="@+id/login_research_result_layout"
+        android:layout_marginTop="319dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="15dp"
+        android:background="#ebc9c9"
+        android:id="@+id/login_research_prompt_layout">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/prompt_search_by_login"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="26dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp" />
+
+        <SearchView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/searchView"
+            android:layout_alignBottom="@+id/autoCompleteTextView"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:clickable="true" />
+
+    </RelativeLayout>
+</RelativeLayout>

@@ -13,7 +13,10 @@
         android:background="#7184e1"
         android:layout_marginTop="2dp"
         android:layout_marginRight="3dp"
-        android:layout_marginLeft="3dp" />
+        android:layout_marginLeft="3dp"
+        android:autoText="false"
+        android:elegantTextHeight="false"
+        android:singleLine="true" />
 
     <TextView
         android:layout_width="match_parent"

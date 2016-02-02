@@ -1,9 +1,10 @@
-package com.discovery.java.tekdroid;
+package com.discovery.java.tekdroid.APITools;
 
 
 import android.content.Context;
 import android.content.Intent;
 
+import com.discovery.java.tekdroid.R;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;

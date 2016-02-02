@@ -1,4 +1,4 @@
-package com.discovery.java.tekdroid;
+package com.discovery.java.tekdroid.Activities;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -28,6 +28,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.discovery.java.tekdroid.APITools.API;
+import com.discovery.java.tekdroid.R;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 import com.loopj.android.http.SyncHttpClient;
@@ -47,7 +49,7 @@ import static android.Manifest.permission.READ_CONTACTS;
  */
 public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
-    private  API            _api = new API(this);
+    private API _api = new API(this);
 
     /**
      * Id to identity READ_CONTACTS permission request.
