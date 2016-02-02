@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -39,6 +40,10 @@ import cz.msebera.android.httpclient.Header;
 public class                    PlanningFragment extends Fragment {
     API _api;
     CalendarView calendar;
+    Button viewButton;
+    int _dyear;
+    int _dmonth;
+    int _dday;
 
     Day _day;
     //
@@ -49,6 +54,9 @@ public class                    PlanningFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         _api = new API(getActivity());
+        _dyear = 0;
+        _dmonth = 0;
+        _dday = 0;
     }
 
     @Nullable
@@ -69,28 +77,35 @@ public class                    PlanningFragment extends Fragment {
 
     public void calendarInit(View view) {
         calendar = (CalendarView)view.findViewById(R.id.calendar);
-
                 // sets whether to show the week number.
                 calendar.setShowWeekNumber(false);
-
         // sets the first day of week according to Calendar.
         // here we set Monday as the first day of the Calendar
         calendar.setFirstDayOfWeek(2);
-
         //sets the listener to be notified upon selected date change.
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             //show the selected date as a toast
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int day) {
-                String strDay = "2016-02-04";
-                // TODO : implementing the planning activity, passing it the date selected and the api bundle
-                Intent i = new Intent(getActivity(), PlanningActivity.class);
-                _api.relayInciter(i);
-                i.putExtra("day", strDay);
-                startActivity(i);
-                Toast.makeText(getActivity(), day + "/" + month + "/" + year, Toast.LENGTH_LONG).show();
+                _dyear = year;
+                _dmonth = month;
+                _dday = day;
             }
         });
+        viewButton = (Button)view.findViewById(R.id.button_view);
+        viewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String strDay = "2016-02-04";
+                Intent i = new Intent(getActivity(), PlanningActivity.class);
+                _api.relayInciter(i);
+                i.putExtra("day", _dday);
+                i.putExtra("year", _dyear);
+                i.putExtra("month", _dmonth);
+                startActivity(i);
+            }
+        });
+
     }
 
 
