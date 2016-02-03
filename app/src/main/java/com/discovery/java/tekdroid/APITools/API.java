@@ -99,7 +99,7 @@ public class API {
         p.put(getString(R.string.token), _session_token);
         p.put(getString(R.string.year), year);
         p.put(getString(R.string.location), location);
-        if (!promo.equals("null"))
+        if (!promo.equals("null") && !promo.equals("none"))
             p.put(getString(R.string.promotion), promo);
         _client.get(getString(R.string.trombiAPI), p, callBack);
     }
