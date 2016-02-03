@@ -16,5 +16,6 @@ public class MarkListItem {
         mProjectName = projectName;
         mProjectMark = projectMark;
         mProjectRater = projectRater;
+        System.out.println("RATER === " + projectRater);
     }
 }

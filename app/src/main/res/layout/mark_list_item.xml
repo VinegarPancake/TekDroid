@@ -4,15 +4,19 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="30dp"
         android:id="@+id/list_mark_item_rater"
         android:autoText="false"
         android:background="#4f8af9"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="2dp" />
+        android:gravity="left|bottom"
+        android:text="TOTO"
+        android:textColor="#0f0303"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_alignTop="@+id/list_mark_item_mark"
+        android:layout_toRightOf="@+id/list_mark_item_project_name"
+        android:layout_toEndOf="@+id/list_mark_item_project_name" />
 
     <TextView
         android:layout_width="30dp"
@@ -25,7 +29,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="2dp" />
+        android:layout_marginTop="2dp"
+        android:gravity="bottom|center" />
 
     <TextView
         android:layout_width="match_parent"
@@ -37,5 +42,6 @@
         android:background="#c9e0fa"
         android:layout_marginLeft="2dp"
         android:layout_marginTop="2dp"
-        android:layout_alignBottom="@+id/list_mark_item_mark" />
+        android:layout_alignBottom="@+id/list_mark_item_mark"
+        android:gravity="left|bottom" />
 </RelativeLayout>

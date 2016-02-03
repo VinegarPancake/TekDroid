@@ -6,7 +6,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:background="#bacfff"
+        android:background="#ffffff"
         android:id="@+id/home_user_info_layout"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -21,7 +21,8 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp" />
+            android:layout_marginBottom="5dp"
+            android:cropToPadding="false" />
 
         <TextView
             android:layout_width="match_parent"
@@ -31,7 +32,8 @@
             android:layout_alignTop="@+id/home_user_info_profile_picture"
             android:layout_toEndOf="@+id/home_user_info_profile_picture"
             android:layout_margin="5dp"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:gravity="left|center" />
 
         <TextView
             android:layout_width="match_parent"
@@ -42,7 +44,8 @@
             android:layout_marginRight="5dp"
             android:layout_below="@+id/home_user_info_fullName"
             android:layout_toEndOf="@+id/home_user_info_profile_picture"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:gravity="left|center" />
 
         <TextView
             android:layout_width="match_parent"
@@ -53,19 +56,19 @@
             android:layout_marginRight="5dp"
             android:layout_below="@+id/home_user_info_login"
             android:layout_alignStart="@+id/home_user_info_login"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:gravity="left|center" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/home_user_info_gpa"
-            android:layout_marginLeft="60dp"
+            android:singleLine="true"
             android:layout_below="@+id/home_user_info_email"
-            android:layout_toRightOf="@+id/textView8"
-            android:layout_toEndOf="@+id/textView8"
-            android:layout_marginStart="60dp"
-            android:singleLine="true" />
+            android:layout_toRightOf="@+id/textView9"
+            android:layout_toEndOf="@+id/textView9"
+            android:gravity="center" />
 
         <TextView
             android:layout_width="match_parent"
@@ -75,7 +78,8 @@
             android:singleLine="true"
             android:layout_alignParentBottom="true"
             android:layout_alignLeft="@+id/home_user_info_credits"
-            android:layout_alignStart="@+id/home_user_info_credits" />
+            android:layout_alignStart="@+id/home_user_info_credits"
+            android:gravity="center" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -85,7 +89,11 @@
             android:id="@+id/textView8"
             android:layout_alignParentBottom="true"
             android:layout_toRightOf="@+id/home_user_info_profile_picture"
-            android:layout_toEndOf="@+id/home_user_info_profile_picture" />
+            android:gravity="left"
+            android:textColor="#000000"
+            android:background="@android:drawable/button_onoff_indicator_on"
+            android:layout_alignRight="@+id/textView11"
+            android:layout_alignEnd="@+id/textView11" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -95,7 +103,12 @@
             android:id="@+id/textView9"
             android:layout_alignBottom="@+id/home_user_info_gpa"
             android:layout_toRightOf="@+id/home_user_info_profile_picture"
-            android:layout_toEndOf="@+id/home_user_info_profile_picture" />
+            android:gravity="left"
+            android:textColor="#000000"
+            android:autoText="false"
+            android:background="@android:drawable/button_onoff_indicator_on"
+            android:layout_alignRight="@+id/textView11"
+            android:layout_alignEnd="@+id/textView11" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -106,7 +119,10 @@
             android:layout_below="@+id/textView9"
             android:layout_toRightOf="@+id/home_user_info_profile_picture"
             android:layout_toEndOf="@+id/home_user_info_profile_picture"
-            android:layout_marginBottom="5dp" />
+            android:layout_marginBottom="5dp"
+            android:gravity="left"
+            android:textColor="#000000"
+            android:background="@android:drawable/button_onoff_indicator_on" />
 
         <TextView
             android:layout_width="match_parent"
@@ -117,7 +133,8 @@
             android:layout_alignTop="@+id/textView11"
             android:layout_alignLeft="@+id/home_user_info_gpa"
             android:layout_alignStart="@+id/home_user_info_gpa"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:gravity="center" />
     </RelativeLayout>
 
     <ListView
@@ -127,9 +144,11 @@
         android:layout_below="@+id/home_user_info_layout"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="175dp"
-        android:background="#ffffff" />
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="180dp"
+        android:background="#ffffff"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -161,7 +180,8 @@
         android:layout_below="@+id/home_last_grade_title"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#bfb2f7"
-        android:layout_alignParentBottom="true" />
+        android:background="#f5f4f9"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="5dp" />
 
 </RelativeLayout>
