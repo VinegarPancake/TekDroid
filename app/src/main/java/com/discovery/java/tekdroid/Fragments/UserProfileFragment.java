@@ -106,7 +106,7 @@ public class                    UserProfileFragment extends Fragment {
                 {
                     JSONArray marks = response.getJSONArray(API.getString(R.string.marks));
                     int         position = 0;
-                    for (int i = marks.length() - 1; i >= 0 && position < 10; i--)
+                    for (int i = marks.length() - 1; i >= 0 && position < 20; i--)
                     {
                         try
                         {

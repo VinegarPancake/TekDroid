@@ -43,5 +43,6 @@
         android:layout_marginLeft="2dp"
         android:layout_marginTop="2dp"
         android:layout_alignBottom="@+id/list_mark_item_mark"
-        android:gravity="left|bottom" />
+        android:gravity="left|bottom"
+        android:textSize="15dp" />
 </RelativeLayout>
