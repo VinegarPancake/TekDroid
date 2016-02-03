@@ -80,7 +80,7 @@ public class                    UserProfileFragment extends Fragment {
                 try { ((TextView) _fragmentView.findViewById(R.id.home_user_info_promo)).setText(_userProfile.year); } catch (NullPointerException e) {e.printStackTrace(); }
                 try { ((TextView) _fragmentView.findViewById(R.id.home_user_info_gpa)).setText(_userProfile.gpa); } catch (NullPointerException e) {e.printStackTrace(); }
                 try { ((TextView) _fragmentView.findViewById(R.id.home_user_info_credits)).setText(_userProfile.credits); } catch (NullPointerException e) {e.printStackTrace(); }
-                try { ((TextView) _fragmentView.findViewById(R.id.home_user_info_active_time)).setText(_userProfile.activeTime); } catch (NullPointerException e) {e.printStackTrace(); }
+                try { ((TextView) _fragmentView.findViewById(R.id.home_user_info_active_time)).setText(_userProfile.activeTime + "h"); } catch (NullPointerException e) {e.printStackTrace(); }
                 try { ((TextView) _fragmentView.findViewById(R.id.home_user_info_email)).setText(_userProfile.email); } catch (NullPointerException e) {e.printStackTrace(); }
                 try { Picasso.with(getActivity()).load(_userProfile.pictureSrc).into((ImageView) _fragmentView.findViewById(R.id.home_user_info_profile_picture)); } catch (NullPointerException e) {e.printStackTrace(); }
                 try { _api._sem = _userProfile.semester; } catch (NullPointerException e) {e.printStackTrace();}
@@ -158,7 +158,7 @@ public class                    UserProfileFragment extends Fragment {
                     }
                     GradeListAdapter mGradeAdapter = new GradeListAdapter(getActivity(), R.layout.grade_list_item, _gradeList);
                     ((ListView) _fragmentView.findViewById(R.id.home_last_grade_list)).setAdapter(mGradeAdapter);
-                } catch (JSONException e) {e.printStackTrace(); }
+                } catch (Exception e) {e.printStackTrace(); }
 
             }
             @Override
