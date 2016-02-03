@@ -8,6 +8,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Title"
+        android:textSize="20sp"
         android:id="@+id/message_list_item_title"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
