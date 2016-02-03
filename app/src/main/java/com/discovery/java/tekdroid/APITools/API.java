@@ -111,4 +111,17 @@ public class API {
         p.put(getString(R.string.token), _session_token);
         _client.get(getString(R.string.messagesAPI), p, callBack);
     }
+
+    public void         enterToken(JsonHttpResponseHandler callBack, Integer year, String cmodu, String cinst, String cacti, String cevent, String token) {
+        RequestParams   p = new RequestParams();
+
+        p.put(getString(R.string.token), _session_token);
+        p.put(getString(R.string.event_c0), year);
+        p.put(getString(R.string.event_c1), cmodu);
+        p.put(getString(R.string.event_c2), cinst);
+        p.put(getString(R.string.event_c3), cacti);
+        p.put(getString(R.string.event_c4), cevent);
+        p.put(getString(R.string.tokencode), token);
+        _client.post(getString(R.string.tokenAPI), p, callBack);
+    }
 }

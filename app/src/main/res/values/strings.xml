@@ -64,6 +64,8 @@
 
     <string name="moduleAPI">https://epitech-api.herokuapp.com/modules</string>
 
+    <string name="tokenAPI">https://epitech-api.herokuapp.com/modules</string>
+
     <!-- Messages -->
     <string name="messagesAPI">https://epitech-api.herokuapp.com/messages</string>
     <string name="message_title">title</string>
@@ -119,6 +121,7 @@
     <string name="event_c2">codeinstance</string>
     <string name="event_c3">codeacti</string>
     <string name="event_c4">codeevent</string>
+    <string name="tokencode">tokenvalidationcode</string>
 
 
     <!-- GRADES -->

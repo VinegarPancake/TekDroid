@@ -33,8 +33,18 @@
         />
 
     <TextView
-        android:id="@+id/typeVoid"
+        android:id="@+id/time"
         android:layout_below="@id/reg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:textColor="@color/colorPrimary"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/typeVoid"
+        android:layout_below="@id/time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimaryDark"
@@ -99,5 +109,20 @@
         android:text="Demande à Nico"
         android:textSize="16sp"/>
 
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/acti_room">
+
+        <EditText
+            android:id="@+id/token"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:hint="@string/token"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+    </android.support.design.widget.TextInputLayout>
 
 </RelativeLayout>
