@@ -8,8 +8,9 @@
         android:layout_height="30dp"
         android:id="@+id/list_mark_item_rater"
         android:autoText="false"
-        android:background="#4f8af9"
-        android:gravity="left|bottom"
+        android:background="#c9e0fa"
+        android:gravity="center"
+        android:textSize="16sp"
         android:text="TOTO"
         android:textColor="#0f0303"
         android:layout_marginLeft="30dp"
@@ -30,18 +31,20 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="2dp"
-        android:gravity="bottom|center" />
+        android:gravity="center" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="ProjectName"
+        android:textSize="18sp"
+
         android:id="@+id/list_mark_item_project_name"
         android:layout_toStartOf="@+id/list_mark_item_mark"
         android:background="#c9e0fa"
         android:layout_marginLeft="2dp"
         android:layout_marginTop="2dp"
         android:layout_alignBottom="@+id/list_mark_item_mark"
-        android:gravity="left|bottom" />
+        android:gravity="center_vertical" />
 </RelativeLayout>
