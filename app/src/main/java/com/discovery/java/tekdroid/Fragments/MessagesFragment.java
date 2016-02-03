@@ -41,7 +41,9 @@ public class                MessagesFragment extends Fragment {
         try {   mAPI._session_token = this.getArguments().getString("sessionToken");} catch (NullPointerException e) { e.printStackTrace(); }
         mFragmentView = inflater.inflate(R.layout.fragment_messages, container, false);
 
-        mAPI.retrieveUserMessages(userMessagesRequest());
+        try {
+            mAPI.retrieveUserMessages(userMessagesRequest());
+        } catch (NullPointerException e ) { e.printStackTrace(); }
         return mFragmentView;
     }
 

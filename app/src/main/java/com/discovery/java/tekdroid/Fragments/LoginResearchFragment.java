@@ -47,7 +47,9 @@ public class                        LoginResearchFragment extends Fragment {
 
         _api = new API(getActivity());
         if (getArguments() != null) {
-            _api._session_token = getArguments().getString("sessionToken");
+            try {
+                _api._session_token = getArguments().getString("sessionToken");
+            } catch (NullPointerException e) {e.printStackTrace(); }
         }
     }
 

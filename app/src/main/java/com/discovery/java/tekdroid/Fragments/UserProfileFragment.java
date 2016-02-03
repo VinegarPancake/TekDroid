@@ -55,9 +55,11 @@ public class                    UserProfileFragment extends Fragment {
         try {   _api._session_token = this.getArguments().getString("sessionToken");} catch (NullPointerException e) { e.printStackTrace(); }
         try {   _fragmentView = inflater.inflate(R.layout.fragment_user_profile, container, false);} catch (NullPointerException e) { e.printStackTrace(); }
 
-        _api.retrieveProfileInformation(_api._userLogin, userProfileRequest());
-        _api.retrieveUserMark(userMarkRequest());
-        _api.retrieveUserModules(userGradeRequest());
+        try {
+            _api.retrieveProfileInformation(_api._userLogin, userProfileRequest());
+            _api.retrieveUserMark(userMarkRequest());
+            _api.retrieveUserModules(userGradeRequest());
+        } catch (NullPointerException e) {e.printStackTrace(); }
         return _fragmentView;
     }
 
