@@ -3,6 +3,7 @@ package com.discovery.java.tekdroid.APITools;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
 import com.discovery.java.tekdroid.R;
 import com.loopj.android.http.AsyncHttpClient;
@@ -69,6 +70,8 @@ public class API {
     public void         retrieveDay(JsonHttpResponseHandler callBack, String day) {
         RequestParams   p = new RequestParams();
 
+        Log.d("TOKEN", _session_token);
+        Log.d("DAY", day);
         p.put(getString(R.string.token), _session_token);
         p.put(getString(R.string.start), day);
         p.put(getString(R.string.end), day);

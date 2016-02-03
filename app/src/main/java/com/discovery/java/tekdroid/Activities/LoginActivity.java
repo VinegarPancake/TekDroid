@@ -7,6 +7,7 @@ import android.app.LoaderManager.LoaderCallbacks;
 import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.Loader;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
@@ -25,6 +26,7 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -73,6 +75,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+    private CheckBox rememberMe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,6 +108,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+        rememberMe = (CheckBox)findViewById(R.id.remember_me);
+        SharedPreferences prefs = getSharedPreferences("EpiAndroidLoginInfo", MODE_PRIVATE);
+        if (prefs.getString("login", null) != null)
+            mEmailView.setText(prefs.getString("login", null));
+        if (prefs.getString("pass", null) != null)
+            mPasswordView.setText(prefs.getString("pass", null));
     }
 
     private void populateAutoComplete() {
@@ -361,6 +370,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             if (success)
             {
                 finish();
+                if (rememberMe.isChecked()) {
+                    SharedPreferences.Editor editorW = getSharedPreferences("EpiAndroidLoginInfo", MODE_PRIVATE).edit();
+                    editorW.putString("login", mEmailView.getText().toString());
+                    editorW.putString("pass", mPasswordView.getText().toString());
+                    editorW.apply();
+                }
                 Intent intentMyAccount = new Intent(getApplicationContext(), HomeActivity.class);
                 _api.relayInciter(intentMyAccount);
                 startActivity(intentMyAccount);

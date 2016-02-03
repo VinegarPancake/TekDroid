@@ -24,7 +24,7 @@ public class EventListItem {
 
         try { mEventStart = jsonEvent.getString("start"); } catch (JSONException e) {e.printStackTrace(); }
         try { mEventEnd = jsonEvent.getString("end"); } catch (JSONException e) {e.printStackTrace(); }
-        try { mEventTitle = jsonEvent.getString("title"); } catch (JSONException e) {e.printStackTrace(); }
+        try { mEventTitle = jsonEvent.getString("acti_title"); } catch (JSONException e) {e.printStackTrace(); }
         try { mEventCodeEvent = jsonEvent.getString("codeevent"); } catch (JSONException e) {e.printStackTrace(); }
         try { mEventCodeActi = jsonEvent.getString("codeacti"); } catch (JSONException e) {e.printStackTrace(); }
         try { mEventCodeInstance = jsonEvent.getString("codeinstance"); } catch (JSONException e) {e.printStackTrace(); }
