@@ -143,7 +143,7 @@ public class                    UserProfileFragment extends Fragment {
                 {
                     JSONArray   modules = response.getJSONArray(API.getString(R.string.modules));
                     int         position = 0;
-                    for (int i = modules.length() - 1; i >= 0 && position < 7; i--)
+                    for (int i = modules.length() - 1; i >= 0 && position < 12; i--)
                     {
                         try
                         {

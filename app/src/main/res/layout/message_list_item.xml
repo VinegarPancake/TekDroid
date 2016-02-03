@@ -19,7 +19,7 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="2dp"
         android:layout_marginRight="5dp"
-        android:textSize="13dp" />
+         />
 
     <TextView
         android:layout_width="fill_parent"
@@ -45,16 +45,14 @@
         android:id="@+id/message_list_item_from"
         android:background="#2c3035"
         android:autoText="false"
-        android:gravity="center"
-        android:layout_marginRight="234dp"
-        android:layout_marginEnd="234dp"
+        android:gravity="left|center"
         android:textColor="#f08007"
         android:singleLine="true"
         android:layout_below="@+id/message_list_item_body"
-        android:layout_alignRight="@+id/message_list_item_title"
-        android:layout_alignEnd="@+id/message_list_item_title"
-        android:layout_marginBottom="3dp"
-        android:layout_marginLeft="5dp" />
+        android:layout_alignLeft="@+id/message_list_item_body"
+        android:layout_alignStart="@+id/message_list_item_body"
+        android:layout_alignRight="@+id/message_list_item_body"
+        android:layout_alignEnd="@+id/message_list_item_body" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -65,14 +63,14 @@
         android:background="@color/colorPrimary"
         android:textSize="16sp"
         android:textColor="#FFFFFF"
-        android:layout_alignTop="@+id/message_list_item_from"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="165dp"
-        android:layout_marginStart="165dp"
         android:gravity="center"
         android:singleLine="true"
-        android:layout_marginBottom="3dp"
-        android:layout_marginRight="5dp" />
+        android:layout_below="@+id/message_list_item_body"
+        android:layout_alignLeft="@+id/message_list_item_from"
+        android:layout_alignStart="@+id/message_list_item_from"
+        android:layout_marginLeft="230dp"
+        android:layout_marginStart="230dp"
+        android:layout_alignRight="@+id/message_list_item_body"
+        android:layout_alignEnd="@+id/message_list_item_body" />
 
 </RelativeLayout>

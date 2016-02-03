@@ -123,7 +123,9 @@
                 android:singleLine="true"
                 android:gravity="left"
                 android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp" />
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -137,7 +139,9 @@
                 android:singleLine="true"
                 android:gravity="left"
                 android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp" />
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -147,9 +151,13 @@
                 android:id="@+id/login_research_result_promo"
                 android:singleLine="true"
                 android:gravity="left"
-                android:layout_above="@+id/login_research_result_gpa"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_below="@+id/login_research_result_city"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="2dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -159,9 +167,10 @@
                 android:id="@+id/login_research_result_gpa"
                 android:singleLine="true"
                 android:gravity="left"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_below="@+id/login_research_result_promo"
+                android:layout_alignRight="@+id/login_research_result_promo"
+                android:layout_alignEnd="@+id/login_research_result_promo"
+                android:layout_margin="2dp" />
         </RelativeLayout>
 
         <RelativeLayout
