@@ -13,7 +13,7 @@
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Modules du semestre courant       "
+        android:text="@string/p1"
         android:id="@+id/switch1"
         android:layout_gravity="right"
         android:layout_marginBottom="15dp"/>
@@ -21,7 +21,7 @@
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Modules où je suis inscrit seulement       "
+        android:text="@string/p2"
         android:id="@+id/switch2"
         android:layout_gravity="right"
         android:layout_marginBottom="15dp"/>
@@ -29,7 +29,7 @@
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sessions où je suis inscrit seulement       "
+        android:text="@string/p3"
         android:id="@+id/switch3"
         android:layout_gravity="right"/>
 

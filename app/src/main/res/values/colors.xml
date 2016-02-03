@@ -8,4 +8,6 @@
     <item name="green" type="color">#4499CC00</item>
     <item name="darkgreen" type="color">#FF669900</item>
     <item name="plancton" type="color">#59ABE3</item>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
 </resources>

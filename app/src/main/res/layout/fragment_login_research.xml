@@ -26,6 +26,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="login :"
+            android:textSize="15sp"
             android:id="@+id/textView"
             android:layout_alignTop="@+id/login_research_profile_picture"
             android:layout_toRightOf="@+id/login_research_profile_picture"
@@ -49,6 +50,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="name :"
+            android:textSize="15sp"
             android:id="@+id/textView2"
             android:layout_below="@+id/textView"
             android:layout_toRightOf="@+id/login_research_profile_picture"
@@ -60,6 +62,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="city :"
+            android:textSize="15sp"
             android:id="@+id/textView3"
             android:layout_below="@+id/textView2"
             android:layout_toRightOf="@+id/login_research_profile_picture"
@@ -71,6 +74,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="year :"
+            android:textSize="15sp"
             android:id="@+id/textView4"
             android:layout_below="@+id/textView3"
             android:layout_toRightOf="@+id/login_research_profile_picture"
@@ -82,6 +86,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="gpa :"
+            android:textSize="15sp"
             android:id="@+id/textView5"
             android:layout_below="@+id/textView4"
             android:layout_toRightOf="@+id/login_research_profile_picture"
@@ -101,7 +106,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Medium Text"
+                android:textSize="15sp"
                 android:id="@+id/login_research_result_login"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
@@ -115,7 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Medium Text"
+                android:textSize="15sp"
                 android:id="@+id/login_research_result_fullName"
                 android:layout_below="@+id/login_research_result_login"
                 android:layout_alignParentLeft="true"
@@ -131,7 +136,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Medium Text"
+                android:textSize="15sp"
                 android:id="@+id/login_research_result_city"
                 android:layout_below="@+id/login_research_result_fullName"
                 android:layout_alignParentLeft="true"
@@ -147,7 +152,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Medium Text"
+                android:textSize="15sp"
                 android:id="@+id/login_research_result_promo"
                 android:singleLine="true"
                 android:gravity="left"
@@ -163,7 +168,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Medium Text"
+                android:textSize="15sp"
                 android:id="@+id/login_research_result_gpa"
                 android:singleLine="true"
                 android:gravity="left"
@@ -175,7 +180,8 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ntm"
             android:layout_below="@+id/login_research_profile_picture"
             android:layout_alignLeft="@+id/login_research_profile_picture"
             android:layout_alignStart="@+id/login_research_profile_picture"
@@ -184,7 +190,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
@@ -200,7 +206,7 @@
                     android:text="Member of :"
                     android:id="@+id/textView6"
                     android:singleLine="true"
-                    android:textSize="10dp"
+                    android:textSize="15dp"
                     android:layout_marginTop="27dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentRight="true"
@@ -210,7 +216,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="160dp"
                 android:layout_marginStart="160dp"
                 android:id="@+id/login_reasearch_result_values"
@@ -222,11 +228,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Medium Text"
                     android:id="@+id/login_research_info_value_membership"
                     android:singleLine="false"
                     android:gravity="left"
-                    android:textSize="10dp"
+                    android:textSize="14dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
@@ -235,26 +240,15 @@
             </RelativeLayout>
         </RelativeLayout>
 
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#ffffff"
-        android:id="@+id/login_research_prompt_layout"
-        android:gravity="center_vertical"
-        android:layout_alignTop="@+id/login_research_result_layout"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="384dp">
-
         <SearchView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/login_research_search_button"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
+            android:layout_below="@id/ntm"
+            android:gravity="center"
             android:clickable="true" />
 
     </RelativeLayout>
+
+
 </RelativeLayout>

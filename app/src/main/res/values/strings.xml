@@ -93,6 +93,10 @@
     <string name="title_activity_login">Sign in</string>
     <string name="user_groups">groups</string>
     <string name="group_name">name</string>
+    <string name="biggpa">GPA</string>
+    <string name="bigcredits">Crédits</string>
+    <string name="bigactive">Log</string>
+    <string name="bigyear">Promo</string>
     <!-- /USER -->
 
     <!-- Strings related to login Activity-->
@@ -108,8 +112,8 @@
     <!-- /Strings related to login Activity-->
 
     <!-- Marks -->
-    <string name="last_mark_title">Last Marks :</string>
-    <string name="last_grade_title">Last Grades :</string>
+    <string name="last_mark_title">Dernières notes :</string>
+    <string name="last_grade_title">Derniers grades :</string>
     <string name="marks">notes</string>
     <string name="mark_project_name">title</string>
     <string name="mark_final_mark">final_note</string>
@@ -134,4 +138,14 @@
     <string name="prompt_search_by_login">Search by login</string>
     <string name="title_activity_planning">PlanningActivity</string>
     <string name="title_activity_event">EventActivity</string>
+    <string name="p1">Modules du semestre courant       </string>
+    <string name="p2">Modules où je suis inscrit seulement       </string>
+    <string name="p3">Sessions où je suis inscrit seulement       </string>
+
+    <string name="e1">Type</string>
+    <string name="e2">Module</string>
+    <string name="e3">Description</string>
+    <string name="e4">Salle(s)</string>
+
+
 </resources>

@@ -16,7 +16,6 @@
         android:id="@+id/acti_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Titre de l'activité blah"
         android:textSize="20sp"
         android:textColor="@color/colorPrimary"
         android:gravity="center"
@@ -48,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimaryDark"
-        android:text="Type"
+        android:text="@string/e1"
         android:textSize="18sp"/>
 
     <TextView
@@ -64,7 +63,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimaryDark"
-        android:text="Module"
+        android:text="@string/e2"
         android:textSize="18sp"/>
 
     <TextView
@@ -80,7 +79,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimaryDark"
-        android:text="Description"
+        android:text="@string/e3"
         android:textSize="18sp"/>
 
     <TextView
@@ -97,7 +96,7 @@
         android:layout_below="@id/acti_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Salle(s)"
+        android:text="@string/e4"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"/>
 
@@ -106,7 +105,6 @@
         android:layout_below="@id/roomVoid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Demande à Nico"
         android:textSize="16sp"/>
 
     <android.support.design.widget.TextInputLayout

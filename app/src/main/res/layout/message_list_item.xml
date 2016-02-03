@@ -1,76 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_marginBottom="6dp">
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Title"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:id="@+id/message_list_item_title"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="@color/colorPrimary"
-        android:gravity="center"
-        android:textColor="#ffffff"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginRight="5dp"
-         />
+        android:gravity="center" />
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Body"
-        android:textSize="16sp"
+        android:textSize="12sp"
         android:id="@+id/message_list_item_body"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/message_list_item_title"
-        android:gravity="center"
-        android:background="#95c6ed"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp" />
+        android:gravity="center" />
 
     <TextView
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="user_l"
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:id="@+id/message_list_item_from"
         android:background="#2c3035"
-        android:autoText="false"
-        android:gravity="left|center"
-        android:textColor="#f08007"
-        android:singleLine="true"
+        android:gravity="center"
         android:layout_below="@+id/message_list_item_body"
-        android:layout_alignLeft="@+id/message_list_item_body"
-        android:layout_alignStart="@+id/message_list_item_body"
-        android:layout_alignRight="@+id/message_list_item_body"
-        android:layout_alignEnd="@+id/message_list_item_body" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="191dp"
+        android:layout_marginEnd="191dp"
+        android:textColor="#f08007"
+        android:singleLine="true" />
 
     <TextView
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="le 12/15/45 à 24h56"
         android:id="@+id/message_list_item_date"
         android:background="@color/colorPrimary"
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:textColor="#FFFFFF"
+        android:layout_alignTop="@+id/message_list_item_from"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="165dp"
+        android:layout_marginStart="165dp"
         android:gravity="center"
-        android:singleLine="true"
-        android:layout_below="@+id/message_list_item_body"
-        android:layout_alignLeft="@+id/message_list_item_from"
-        android:layout_alignStart="@+id/message_list_item_from"
-        android:layout_marginLeft="230dp"
-        android:layout_marginStart="230dp"
-        android:layout_alignRight="@+id/message_list_item_body"
-        android:layout_alignEnd="@+id/message_list_item_body" />
+        android:singleLine="true" />
 
 </RelativeLayout>
