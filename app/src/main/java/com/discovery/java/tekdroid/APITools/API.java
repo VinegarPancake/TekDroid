@@ -86,4 +86,12 @@ public class API {
             p.put(getString(R.string.promotion), promo);
         _client.get(getString(R.string.trombiAPI), p, callBack);
     }
+
+    public void         retrieveUserMessages(JsonHttpResponseHandler callBack)
+    {
+        RequestParams   p = new RequestParams();
+
+        p.put(getString(R.string.token), _session_token);
+        _client.get(getString(R.string.messagesAPI), p, callBack);
+    }
 }

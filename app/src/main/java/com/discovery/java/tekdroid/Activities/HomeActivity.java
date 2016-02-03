@@ -23,6 +23,7 @@ import com.discovery.java.tekdroid.APITools.Profile;
 import com.discovery.java.tekdroid.Adapters.GradeListAdapter;
 import com.discovery.java.tekdroid.Adapters.MarkListAdapter;
 import com.discovery.java.tekdroid.Fragments.LoginResearchFragment;
+import com.discovery.java.tekdroid.Fragments.MessagesFragment;
 import com.discovery.java.tekdroid.Fragments.TrombiFragment;
 import com.discovery.java.tekdroid.Fragments.PlanningFragment;
 import com.discovery.java.tekdroid.Fragments.UserProfileFragment;
@@ -172,6 +173,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_trombi:
                 fragment = new TrombiFragment();
                 title = "Trombinoscope";
+                break;
+            case R.id.nav_messages:
+                fragment = new MessagesFragment();
+                title = "Last Messages";
                 break;
             default: break;
         }

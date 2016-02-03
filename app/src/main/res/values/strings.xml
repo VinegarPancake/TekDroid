@@ -63,7 +63,15 @@
 
     <string name="moduleAPI">https://epitech-api.herokuapp.com/modules</string>
 
+    <!-- Messages -->
     <string name="messagesAPI">https://epitech-api.herokuapp.com/messages</string>
+    <string name="message_title">title</string>
+    <string name="message_user">user</string>
+    <string name="message_teacher_name">title</string>
+    <string name="message_content">content</string>
+    <string name="message_date">date</string>
+
+    <!-- !Messages -->
 
     <!-- USER -->
     <string name="userAPI">https://epitech-api.herokuapp.com/user</string>
