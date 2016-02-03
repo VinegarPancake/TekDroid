@@ -4,7 +4,9 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -55,6 +57,7 @@ public class PlanningActivity extends Activity {
     Boolean current_semester;
     Boolean module_sub;
     Boolean event_sub;
+    Boolean ok;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,8 +111,27 @@ public class PlanningActivity extends Activity {
                         try
                         {
                             JSONObject  m = events.getJSONObject(i);
-                            _eventList.add(position, new EventListItem(m));
-                            ++position;
+                            ok = true;
+                            if (module_sub)
+                                if (!m.getBoolean("module_registered"))
+                                    ok = false;
+                            if (event_sub)
+                                if (!m.getString("event_registered").equals("registered"))
+                                    ok = false;
+                            if (current_semester) {
+                                SharedPreferences sp = getSharedPreferences(getString(R.string.promo), Context.MODE_PRIVATE);
+
+                                if (String.valueOf(m.getInt(getString(R.string.semester))).equals(sp.getString(getString(R.string.semester), "0")))
+                                    Log.d("WAT", "WAAAT");
+                                  //  ok = false;
+                            }
+                            if (ok) {
+                                SharedPreferences sp = getSharedPreferences(getString(R.string.promo), Context.MODE_PRIVATE);
+                                String sem = sp.getString(getString(R.string.semester), "0");
+                                Log.d("SEMESTER", sem);
+                                _eventList.add(position, new EventListItem(m));
+                                ++position;
+                            }
                         } catch (JSONException e) { e.printStackTrace(); }
                     }
                 } catch (JSONException e) {e.printStackTrace(); }

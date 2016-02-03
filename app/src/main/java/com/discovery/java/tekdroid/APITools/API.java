@@ -17,6 +17,8 @@ public class API {
 
     public  String                      _userLogin = "null";
     public  String                      _session_token = "null";
+    public  String                      _sem = "null";
+
     private static AsyncHttpClient      _client = new AsyncHttpClient();
     static private Context                     _context = null;
 
@@ -31,6 +33,7 @@ public class API {
     {
         _userLogin = i.getStringExtra(getString(R.string.relayUserLogin));
         _session_token = i.getStringExtra(getString(R.string.relaySessionToken));
+        _sem = i.getStringExtra(getString(R.string.semester));
     }
 
     /* Proceeds information through Activity switch */
@@ -38,6 +41,7 @@ public class API {
     {
         i.putExtra(getString(R.string.relayUserLogin), _userLogin);
         i.putExtra(getString(R.string.relaySessionToken),_session_token);
+        i.putExtra(getString(R.string.semester), _sem);
     }
 
     static public String       getString(int id)
@@ -70,8 +74,6 @@ public class API {
     public void         retrieveDay(JsonHttpResponseHandler callBack, String day) {
         RequestParams   p = new RequestParams();
 
-        Log.d("TOKEN", _session_token);
-        Log.d("DAY", day);
         p.put(getString(R.string.token), _session_token);
         p.put(getString(R.string.start), day);
         p.put(getString(R.string.end), day);

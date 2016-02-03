@@ -77,6 +77,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         bun.putString("userLogin", _api._userLogin);
         bun.putString("sessionToken", _api._session_token);
+        bun.putString("semester", _api._sem);
         try { _userProfileFragment.setArguments(bun); } catch (IllegalStateException e) { e.printStackTrace(); }
         ft.replace(R.id.home_content_layout, _userProfileFragment);
         ft.commit();

@@ -31,6 +31,7 @@
     <string name="year">year</string>
     <string name="location">location</string>
     <string name="promotion">promo</string>
+    <string name="semester">semester</string>
     <string name="yearChoice">Year</string>
 
     <string-array name="trombi_locations">

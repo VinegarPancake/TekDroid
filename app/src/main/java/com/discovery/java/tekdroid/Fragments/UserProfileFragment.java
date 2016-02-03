@@ -1,8 +1,11 @@
 package com.discovery.java.tekdroid.Fragments;
 
 import android.app.Fragment;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -79,6 +82,9 @@ public class                    UserProfileFragment extends Fragment {
                 try { ((TextView) _fragmentView.findViewById(R.id.home_user_info_credits)).setText(_userProfile.credits); } catch (NullPointerException e) {e.printStackTrace(); }
                 try { ((TextView) _fragmentView.findViewById(R.id.home_user_info_email)).setText(_userProfile.email); } catch (NullPointerException e) {e.printStackTrace(); }
                 try { Picasso.with(getActivity()).load(_userProfile.pictureSrc).into((ImageView) _fragmentView.findViewById(R.id.home_user_info_profile_picture)); } catch (NullPointerException e) {e.printStackTrace(); }
+                try { _api._sem = _userProfile.semester; } catch (NullPointerException e) {e.printStackTrace();}
+                getActivity().getSharedPreferences(getString(R.string.promo), Context.MODE_PRIVATE).edit().putString(getString(R.string.semester), _userProfile.semester).apply();
+
             }
 
             @Override

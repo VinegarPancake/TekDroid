@@ -21,6 +21,7 @@ public class Profile {
     public String   activeTime;
     public String   phone;
     public String   credits;
+    public String   semester;
     public String   membership = "";
 
     public Profile  () {
@@ -35,6 +36,7 @@ public class Profile {
         try { pictureSrc = jsonProfile.getString(API.getString(R.string.picture)); } catch (JSONException e) {e.printStackTrace(); }
         try { email = jsonProfile.getString(API.getString(R.string.email)); } catch (JSONException e) {e.printStackTrace(); }
         try { year = jsonProfile.getString(API.getString(R.string.promo)); } catch (JSONException e) {e.printStackTrace(); }
+        try { semester = jsonProfile.getString(API.getString(R.string.semester)); } catch (JSONException e) {e.printStackTrace(); }
         try { gpa = jsonProfile.getJSONArray(API.getString(R.string.gpa)).getJSONObject(0).getString(API.getString(R.string.gpa)); } catch (JSONException e) {e.printStackTrace(); }
         try { activeTime = jsonProfile.getJSONObject(API.getString(R.string.complementary_info)).getString(API.getString(R.string.active_time)); } catch (JSONException e) {e.printStackTrace(); }
         try { credits = jsonProfile.getString(API.getString(R.string.credits)); } catch (JSONException e) {e.printStackTrace(); }
