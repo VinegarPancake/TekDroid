@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/grade_list_item_module_title"
-        android:background="#2e4eeb"
+        android:background="#c9e0fa"
         android:autoText="false"
         android:elegantTextHeight="false"
         android:singleLine="true"
@@ -19,10 +19,11 @@
         android:layout_marginRight="109dp"
         android:layout_marginEnd="109dp"
         android:text="B-SQL INVIDVIDUAL TEST"
-        android:textSize="15dp"
+        android:textSize="16sp"
         android:layout_alignBottom="@+id/grade_list_item_module_grade"
-        android:gravity="left|bottom"
-        android:textColor="#beb5b5" />
+        android:gravity="center_vertical"
+        android:textColor="#3e3a3a"
+         />
 
     <TextView
         android:layout_width="match_parent"
