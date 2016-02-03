@@ -85,10 +85,12 @@
     <string name="fullName">title</string>
     <string name="email">internal_email</string>
     <string name="picture">picture</string>
+    <string name="value">value</string>
     <string name="promo">promo</string>
     <string name="gpa">gpa</string>
     <string name="complementary_info">nsstat</string>
     <string name="active_time">active</string>
+    <string name="phone">telephone</string>
     <string name="credits">credits</string>
     <string name="title_activity_login">Sign in</string>
     <string name="user_groups">groups</string>

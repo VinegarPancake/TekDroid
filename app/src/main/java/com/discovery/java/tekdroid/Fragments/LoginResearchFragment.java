@@ -1,7 +1,10 @@
 package com.discovery.java.tekdroid.Fragments;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.discovery.java.tekdroid.APITools.API;
 import com.discovery.java.tekdroid.APITools.Profile;
@@ -49,6 +53,7 @@ public class                        LoginResearchFragment extends Fragment {
         if (getArguments() != null) {
             try {
                 _api._session_token = getArguments().getString("sessionToken");
+                Log.d("TOKEEEEEN", _api._session_token);
             } catch (NullPointerException e) {e.printStackTrace(); }
         }
     }
@@ -118,6 +123,7 @@ public class                        LoginResearchFragment extends Fragment {
         TextView    activeTime = null;
         TextView    membership = null;
         TextView    credits = null;
+        TextView    phone = null;
 
 
         public searchResultProfileHolder()
@@ -135,6 +141,7 @@ public class                        LoginResearchFragment extends Fragment {
             try { year = (TextView)view.findViewById(R.id.login_research_result_promo); } catch (NullPointerException e) { e.printStackTrace(); }
             try { gpa = (TextView)view.findViewById(R.id.login_research_result_gpa); } catch (NullPointerException e) { e.printStackTrace(); }
             try { membership = (TextView)view.findViewById(R.id.login_research_info_value_membership); } catch (NullPointerException e) { e.printStackTrace(); }
+            try { phone = (TextView)view.findViewById(R.id.b1); } catch (NullPointerException e) { e.printStackTrace(); }
         }
 
         public void setText(Profile profile)
@@ -146,6 +153,35 @@ public class                        LoginResearchFragment extends Fragment {
             year.setText(profile.year);
             gpa.setText(profile.gpa);
             membership.setText(profile.membership);
+            if (!profile.phone.equals("")) {
+                phone.setText(profile.phone);
+                phone.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String uri = "tel:" + phone.getText().toString().trim();
+                        Intent intent = new Intent(Intent.ACTION_DIAL);
+                        intent.setData(Uri.parse(uri));
+                        startActivity(intent);
+                    }
+                });
+            }
+            if (!profile.email.equals("")) {
+                email.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent(Intent.ACTION_SEND);
+                        i.setType("message/rfc822");
+                        i.putExtra(Intent.EXTRA_EMAIL  , email.getText().toString());
+                        i.putExtra(Intent.EXTRA_SUBJECT, "[EPITECH]");
+                        i.putExtra(Intent.EXTRA_TEXT   , "Sent using TekDroid :D");
+                        try {
+                            startActivity(Intent.createChooser(i, "Send mail..."));
+                        } catch (android.content.ActivityNotFoundException ex) {
+                            Toast.makeText(getContext(), "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            }
         }
     }
 }

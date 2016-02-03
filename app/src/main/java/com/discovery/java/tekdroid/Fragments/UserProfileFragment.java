@@ -118,9 +118,10 @@ public class                    UserProfileFragment extends Fragment {
                             ++position;
                         } catch (JSONException e) { e.printStackTrace(); }
                     }
+                    MarkListAdapter mMarkAdapter = new MarkListAdapter(getActivity() , R.layout.mark_list_item, _markList);
+                    ((ListView) _fragmentView.findViewById(R.id.home_last_marks_list)).setAdapter(mMarkAdapter);
                 } catch (JSONException e) {e.printStackTrace(); }
-                MarkListAdapter mMarkAdapter = new MarkListAdapter(getActivity() , R.layout.mark_list_item, _markList);
-                ((ListView) _fragmentView.findViewById(R.id.home_last_marks_list)).setAdapter(mMarkAdapter);
+
                 System.out.println("Leaving Mark request on success");
             }
             @Override
@@ -155,9 +156,10 @@ public class                    UserProfileFragment extends Fragment {
                             }
                         } catch (JSONException e) { e.printStackTrace(); }
                     }
+                    GradeListAdapter mGradeAdapter = new GradeListAdapter(getActivity(), R.layout.grade_list_item, _gradeList);
+                    ((ListView) _fragmentView.findViewById(R.id.home_last_grade_list)).setAdapter(mGradeAdapter);
                 } catch (JSONException e) {e.printStackTrace(); }
-                GradeListAdapter mGradeAdapter = new GradeListAdapter(getActivity(), R.layout.grade_list_item, _gradeList);
-                ((ListView) _fragmentView.findViewById(R.id.home_last_grade_list)).setAdapter(mGradeAdapter);
+
             }
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {

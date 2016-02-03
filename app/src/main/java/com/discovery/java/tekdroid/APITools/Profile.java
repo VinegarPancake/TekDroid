@@ -19,7 +19,7 @@ public class Profile {
     public String   year;
     public String   gpa;
     public String   activeTime;
-    public String   phone;
+    public String   phone = "";
     public String   credits;
     public String   semester;
     public String   membership = "";
@@ -40,6 +40,7 @@ public class Profile {
         try { gpa = jsonProfile.getJSONArray(API.getString(R.string.gpa)).getJSONObject(0).getString(API.getString(R.string.gpa)); } catch (JSONException e) {e.printStackTrace(); }
         try { activeTime = jsonProfile.getJSONObject(API.getString(R.string.complementary_info)).getString(API.getString(R.string.active_time)); } catch (JSONException e) {e.printStackTrace(); }
         try { credits = jsonProfile.getString(API.getString(R.string.credits)); } catch (JSONException e) {e.printStackTrace(); }
+        try { phone = jsonProfile.getJSONObject("userinfo").getJSONObject(API.getString(R.string.phone)).getString(API.getString(R.string.value)); } catch (JSONException e) {e.printStackTrace(); }
         try
         {
             JSONArray groups = jsonProfile.getJSONArray(API.getString(R.string.user_groups));
