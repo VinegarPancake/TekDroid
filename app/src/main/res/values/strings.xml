@@ -73,6 +73,8 @@
 
     <!-- !Messages -->
 
+    <string name="eventAPI">https://epitech-api.herokuapp.com/event</string>
+
     <!-- USER -->
     <string name="userAPI">https://epitech-api.herokuapp.com/user</string>
     <string name="login">login</string>
@@ -110,6 +112,14 @@
     <string name="mark_project_rater">correcteur</string>
     <!-- /Marks -->
 
+    <!-- Events API -->
+    <string name="event_c0">scolaryear</string>
+    <string name="event_c1">codemodule</string>
+    <string name="event_c2">codeinstance</string>
+    <string name="event_c3">codeacti</string>
+    <string name="event_c4">codeevent</string>
+
+
     <!-- GRADES -->
     <string name="modules">modules</string>
     <string name="grade_module_name">title</string>
@@ -118,4 +128,5 @@
 
     <string name="prompt_search_by_login">Search by login</string>
     <string name="title_activity_planning">PlanningActivity</string>
+    <string name="title_activity_event">EventActivity</string>
 </resources>

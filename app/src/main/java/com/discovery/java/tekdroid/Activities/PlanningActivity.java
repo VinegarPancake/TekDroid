@@ -4,6 +4,7 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -75,7 +76,15 @@ public class PlanningActivity extends Activity {
         _list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                Intent i = new Intent(getApplicationContext(), EventActivity.class);
+                _api.relayInciter(i);
+                i.putExtra("scolaryear", _eventList.get(position).mScolarYear);
+                i.putExtra("codemodule", _eventList.get(position).mEventCodeModule);
+                i.putExtra("codeevent", _eventList.get(position).mEventCodeEvent);
+                i.putExtra("codeacti", _eventList.get(position).mEventCodeActi);
+                i.putExtra("codeinstance", _eventList.get(position).mEventCodeInstance);
+                i.putExtra("registered", _eventList.get(position).mEventRegisterStudent);
+                startActivity(i);
             }
         });
 

@@ -78,6 +78,18 @@ public class API {
         _client.get(getString(R.string.planningAPI), p, callBack);
     }
 
+    public void         retrieveEvent(JsonHttpResponseHandler callBack, String year, String cacti, String cmodule, String cevent, String cinstance) {
+        RequestParams   p = new RequestParams();
+
+        p.put(getString(R.string.token), _session_token);
+        p.put(getString(R.string.event_c0), year);
+        p.put(getString(R.string.event_c1), cmodule);
+        p.put(getString(R.string.event_c2), cinstance);
+        p.put(getString(R.string.event_c3), cacti);
+        p.put(getString(R.string.event_c4), cevent);
+        _client.get(getString(R.string.eventAPI), p, callBack);
+    }
+
     public void         retrieveStudentList(String year, String location, String promo, JsonHttpResponseHandler callBack)
     {
         RequestParams   p = new RequestParams();
