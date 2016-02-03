@@ -11,6 +11,8 @@ import android.widget.TextView;
 import com.discovery.java.tekdroid.Items.MessageItem;
 import com.discovery.java.tekdroid.R;
 
+import org.jsoup.Jsoup;
+
 import java.util.ArrayList;
 
 public class                    MessageAdapter extends ArrayAdapter<MessageItem> {
@@ -51,10 +53,10 @@ public class                    MessageAdapter extends ArrayAdapter<MessageItem>
         item = mContent.get(position);
         if (item != null) {
 
-            holder.mTitle.setText(item.mTitle);
-            holder.mBody.setText(item.mContent);
-            holder.mSender.setText(item.mUser);
-            holder.mDate.setText(item.mDate);
+            holder.mTitle.setText(Jsoup.parse(item.mTitle).text());
+            holder.mBody.setText(Jsoup.parse(item.mContent).text());
+            holder.mSender.setText(Jsoup.parse(item.mUser).text());
+            holder.mDate.setText(Jsoup.parse(item.mDate).text());
         }
         return view;
     }
