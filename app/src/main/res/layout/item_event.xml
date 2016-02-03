@@ -7,34 +7,60 @@
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="20dp">
+        android:layout_height="25dp">
+        <TextView
+            android:id="@+id/event_module"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BX-123    "
+            android:textSize="16sp"
+            android:layout_marginRight="10dp"/>
         <TextView
             android:id="@+id/event_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Event Name        " />
+            android:text="Event Name        "
+            android:textSize="20sp"
+            android:layout_marginRight="10dp"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#FFFFFF">
+
         <TextView
             android:id="@+id/event_time_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="20sp"
             android:text="21h00" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="-" />
+            android:textSize="20sp"
+            android:text=" - " />
         <TextView
             android:id="@+id/event_time_end"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="20sp"
             android:text="23h42"
             />
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="20dp"
         android:background="#FFFFFF">
 
+        <TextView
+            android:id="@+id/event_registered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="Not registered" />
 
-
-    </LinearLayout>
+        </LinearLayout>
 </LinearLayout>

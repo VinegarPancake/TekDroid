@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ import com.discovery.java.tekdroid.Activities.HomeActivity;
 import com.discovery.java.tekdroid.Activities.PlanningActivity;
 import com.discovery.java.tekdroid.Adapters.GradeListAdapter;
 import com.discovery.java.tekdroid.Adapters.MarkListAdapter;
+import com.discovery.java.tekdroid.Items.EventListItem;
 import com.discovery.java.tekdroid.Items.GradeListItem;
 import com.discovery.java.tekdroid.Items.MarkListItem;
 import com.discovery.java.tekdroid.R;
@@ -34,6 +36,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 import cz.msebera.android.httpclient.Header;
 
@@ -41,6 +45,9 @@ public class                    PlanningFragment extends Fragment {
     API _api;
     CalendarView calendar;
     Button viewButton;
+    Switch s1;
+    Switch s2;
+    Switch s3;
     int _dyear;
     int _dmonth;
     int _dday;
@@ -57,6 +64,7 @@ public class                    PlanningFragment extends Fragment {
         _dyear = 0;
         _dmonth = 0;
         _dday = 0;
+
     }
 
     @Nullable
@@ -70,6 +78,9 @@ public class                    PlanningFragment extends Fragment {
         //_api.retrieveDay(_api._userLogin, dayRequest(), day);
 
         calendarInit(_fragmentView);
+        s1 = (Switch) _fragmentView.findViewById(R.id.switch1);
+        s2 = (Switch) _fragmentView.findViewById(R.id.switch2);
+        s3 = (Switch) _fragmentView.findViewById(R.id.switch3);
         return _fragmentView;
     }
 
@@ -77,12 +88,8 @@ public class                    PlanningFragment extends Fragment {
 
     public void calendarInit(View view) {
         calendar = (CalendarView)view.findViewById(R.id.calendar);
-                // sets whether to show the week number.
-                calendar.setShowWeekNumber(false);
-        // sets the first day of week according to Calendar.
-        // here we set Monday as the first day of the Calendar
+        calendar.setShowWeekNumber(false);
         calendar.setFirstDayOfWeek(2);
-        //sets the listener to be notified upon selected date change.
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             //show the selected date as a toast
             @Override
@@ -92,13 +99,20 @@ public class                    PlanningFragment extends Fragment {
                 _dday = day;
             }
         });
+        Calendar kalendar = Calendar.getInstance();
+        _dyear = kalendar.get(Calendar.YEAR);
+        _dmonth = kalendar.get(Calendar.MONTH);
+        _dday = kalendar.get(Calendar.DAY_OF_MONTH);
+
         viewButton = (Button)view.findViewById(R.id.button_view);
         viewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String strDay = "2016-02-04";
                 Intent i = new Intent(getActivity(), PlanningActivity.class);
                 _api.relayInciter(i);
+                i.putExtra("b1", s1.isChecked());
+                i.putExtra("b2", s2.isChecked());
+                i.putExtra("b3", s3.isChecked());
                 i.putExtra("day", _dday);
                 i.putExtra("year", _dyear);
                 i.putExtra("month", _dmonth);
@@ -107,106 +121,5 @@ public class                    PlanningFragment extends Fragment {
         });
 
     }
-
-
-    public JsonHttpResponseHandler dayRequest() {
-        JsonHttpResponseHandler responseHandler = new JsonHttpResponseHandler() {
-
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                super.onSuccess(statusCode, headers, response);
-
-             /*   _userProfile = new Profile(response);
-                try { ((TextView) _fragmentView.findViewById(R.id.home_user_info_login)).setText(_userProfile.login); } catch (NullPointerException e) {e.printStackTrace(); }
-                try { ((TextView) _fragmentView.findViewById(R.id.home_user_info_fullName)).setText(_userProfile.fullName); } catch (NullPointerException e) {e.printStackTrace(); }
-                try { ((TextView) _fragmentView.findViewById(R.id.home_user_info_promo)).setText(_userProfile.year); } catch (NullPointerException e) {e.printStackTrace(); }
-                try { ((TextView) _fragmentView.findViewById(R.id.home_user_info_gpa)).setText(_userProfile.gpa); } catch (NullPointerException e) {e.printStackTrace(); }
-                try { ((TextView) _fragmentView.findViewById(R.id.home_user_info_credits)).setText(_userProfile.credits); } catch (NullPointerException e) {e.printStackTrace(); }
-                try { ((TextView) _fragmentView.findViewById(R.id.home_user_info_email)).setText(_userProfile.email); } catch (NullPointerException e) {e.printStackTrace(); }
-                //try { Picasso.with(getActivity()).load(_userProfile.pictureSrc).into((ImageView) _fragmentView.findViewById(R.id.home_user_info_profile_picture)); } catch (NullPointerException e) {e.printStackTrace(); }
-            */
-            }
-
-            @Override
-            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                super.onFailure(statusCode, headers, throwable, errorResponse);
-            }
-        };
-
-        return responseHandler;
-    } /* _____!userProfileRequest */
-
-    /* This request will fill UserProfileFragment::_markList with the 5 last marks obtained by the student */
-    public JsonHttpResponseHandler  userMarkRequest()   {
-        JsonHttpResponseHandler     callBack = new JsonHttpResponseHandler() {
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                super.onSuccess(statusCode, headers, response);
-                try
-                {
-                    JSONArray marks = response.getJSONArray(API.getString(R.string.marks));
-                    int         position = 0;
-                    for (int i = marks.length() - 1; i >= 0 && position < 10; i--)
-                    {
-                        try
-                        {
-                            JSONObject  m = marks.getJSONObject(i);
-                            _markList.add(position, new MarkListItem(m.getString(API.getString(R.string.mark_project_name)),
-                                    m.getString(API.getString(R.string.mark_final_mark)),
-                                    m.getString(API.getString(R.string.mark_project_rater))));
-                            ++position;
-                        } catch (JSONException e) { e.printStackTrace(); }
-                    }
-                } catch (JSONException e) {e.printStackTrace(); }
-                MarkListAdapter mMarkAdapter = new MarkListAdapter(getActivity() , R.layout.mark_list_item, _markList);
-                ((ListView) _fragmentView.findViewById(R.id.home_last_marks_list)).setAdapter(mMarkAdapter);
-                System.out.println("Leaving Mark request on success");
-            }
-            @Override
-            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                super.onFailure(statusCode, headers, throwable, errorResponse);
-                System.out.println("Leaving Mark request on failure");
-            }
-        };
-
-        return callBack;
-    } /* ____!userMarkRequest() */
-
-    /* This request will fill UserProfileFragment::_gradeList with the 3 last grades obtained by the student */
-    public JsonHttpResponseHandler  userGradeRequest()   {
-        JsonHttpResponseHandler     callBack = new JsonHttpResponseHandler() {
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                super.onSuccess(statusCode, headers, response);
-                try
-                {
-                    JSONArray   modules = response.getJSONArray(API.getString(R.string.modules));
-                    int         position = 0;
-                    for (int i = modules.length() - 1; i >= 0 && position < 7; i--)
-                    {
-                        try
-                        {
-                            JSONObject  m = modules.getJSONObject(i);
-                            String      g = m.getString(API.getString(R.string.grade_module_grade));
-                            if (!g.equals("-")) {
-                                _gradeList.add(position, new GradeListItem(m.getString(API.getString(R.string.grade_module_name)), g));
-                                ++position;
-                            }
-                        } catch (JSONException e) { e.printStackTrace(); }
-                    }
-                } catch (JSONException e) {e.printStackTrace(); }
-                GradeListAdapter mGradeAdapter = new GradeListAdapter(getActivity(), R.layout.grade_list_item, _gradeList);
-                ((ListView) _fragmentView.findViewById(R.id.home_last_grade_list)).setAdapter(mGradeAdapter);
-            }
-            @Override
-            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                super.onFailure(statusCode, headers, throwable, errorResponse);
-            }
-        };
-
-        return callBack;
-    } /* ____!userGradeRequest() */
-
-
 
 }

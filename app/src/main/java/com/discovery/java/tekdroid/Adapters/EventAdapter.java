@@ -37,12 +37,14 @@ public class EventAdapter extends ArrayAdapter<EventListItem> {
 
         if (view == null)
         {
-            LayoutInflater  inflater = ((Activity)_context).getLayoutInflater();
+            LayoutInflater  inflater = LayoutInflater.from(_context);
             view = inflater.inflate(_layout_ressource_id, parent, false);
             holder = new EventItemHolder();
             holder.title = (TextView)view.findViewById(R.id.event_name);
             holder.start = (TextView)view.findViewById(R.id.event_time_start);
             holder.end = (TextView)view.findViewById(R.id.event_time_end);
+            holder.module = (TextView)view.findViewById(R.id.event_module);
+
             view.setTag(holder);
         }
         else
@@ -51,8 +53,9 @@ public class EventAdapter extends ArrayAdapter<EventListItem> {
         }
         item = _content.get(position);
         holder.title.setText(item.mEventTitle);
-        holder.start.setText(item.mEventStart);
-        holder.end.setText(item.mEventEnd);
+        holder.start.setText(item.mEventStart.substring(11, 16));
+        holder.end.setText(item.mEventEnd.substring(11, 16));
+        holder.module.setText(item.mEventCodeModule);
 
         return view;
     }
@@ -61,5 +64,6 @@ public class EventAdapter extends ArrayAdapter<EventListItem> {
         TextView    title;
         TextView    start;
         TextView    end;
+        TextView    module;
     }
 }
